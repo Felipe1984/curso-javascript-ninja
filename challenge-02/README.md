@@ -77,18 +77,29 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function myFunction(w, x, y){
-  if(w && !x && !y) {
+  if(w  && x === undefined && y === undefined) {
     return w;
-  } else if(w && x && !y) {
+  } else if(!w = && x && y === undefined) {
     return w + x;
   } else if(w && x && y) {
     return (w + x) / y;
-  } else if(!w && !x && !y) {
+  } else if(w === undefined && x === undefined && y === undefined) {
     return false;
   } else {
     return null;
   }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+myFunction();
+// false
+myFunction(3);
+// 3
+myFunction(3, 5);
+// 8
+myFunction(100, 20, 40);
+// 3
+myFunction(NaN);
+// null
+
 ```
