@@ -29,6 +29,8 @@ function addVal(){
   } else {
     ++noValue;
   }
+  
+  return 'O valor da variável agora é ' + noValue;
 }
 
 // Invoque a função criada acima.
@@ -36,8 +38,8 @@ addVal();
 addVal();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* 1
- * 2
+/* O valor da variável agora é 1
+ * O valor da variável agora é 2
  */
 
 /*
@@ -48,11 +50,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 functio calc(w, x, y){
-  if(!w || !x || !y){
+  if(w === undefined || x === undefined || y === undefined){
     return 'Preencha todos os valores corretamente!';
-  } else {
-    return w * x * y + 2;
   }
+    return w * x * y + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -77,11 +78,11 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function myFunction(w, x, y){
-  if(w  && x === undefined && y === undefined) {
+  if(w !== undefined  && x === undefined && y === undefined) {
     return w;
-  } else if(!w = && x && y === undefined) {
+  } else if(w !== undefined && x !== undefined && y === undefined) {
     return w + x;
-  } else if(w && x && y) {
+  } else if(w !== undefined && x !== undefined && y !== undefined) {
     return (w + x) / y;
   } else if(w === undefined && x === undefined && y === undefined) {
     return false;
@@ -99,7 +100,5 @@ myFunction(3, 5);
 // 8
 myFunction(100, 20, 40);
 // 3
-myFunction(NaN);
-// null
 
 ```
