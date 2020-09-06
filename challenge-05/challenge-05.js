@@ -77,32 +77,76 @@ propriedades:
 os livros.
 */
 function book(book) {
-  var obj = {book1: 'As aventuras de Alice', book2: 'Gato sem botas', book3: 'história de fé'}
+  var obj = {
+             aliceBook: {
+              titulo: "Alice Book",
+              quantidadePaginas: 30,
+              autor: "zezinho",
+              editora: "pingo d'agua"
+             },
+             gatoSemBotas: {
+              titulo: "Gato sem botas",
+              quantidadePaginas: 15,
+              autor: "uguinho",
+              editora: "patinhas"
+             },
+             chapeuzinhoRosa: {
+              titulo: "Chapeuzinho rosa",
+              quantidadePaginas: 26,
+              autor: "Tio patinhas",
+              editora: "tunder cats"
+             }
+            }
+  return book ? book : obj;
 }
 //
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
+// {
+//      aliceBook: {
+//      titulo: "Alice Book",
+//      quantidadePaginas: 30,
+//      autor: "zezinho",
+//      editora: "pingo d'agua"
+//     },
+//     gatoSemBotas: {
+//      titulo: "Gato sem botas",
+//      quantidadePaginas: 15,
+//      autor: "uguinho",
+//      editora: "patinhas"
+//     },
+//     chapeuzinhoRosa: {
+//      titulo: "Chapeuzinho rosa",
+//      quantidadePaginas: 26,
+//      autor: "Tio patinhas",
+//      editora: "tunder cats"
+//     }
+//    }
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+"O livro " + book().aliceBook.titulo + " tem " + book().aliceBook.quantidadePaginas + " páginas!";
+
+//'O livro Alice Book tem 30 páginas!'
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+"O autor do livro " + book().gatoSemBotas.titulo + " é " + book().gatoSemBotas.autor + ".";
+// 'O autor do livro Gato sem botas é uguinho.'
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+"O livro " + book().chapeuzinhoRosa.titulo + " foi publicado pela editora " + book().chapeuzinhoRosa.editora + ".";
+// 'O livro Chapeuzinho rosa foi publicado pela editora tunder cats.'
